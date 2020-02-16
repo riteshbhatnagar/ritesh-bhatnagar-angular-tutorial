@@ -2,15 +2,23 @@
 
 
 <div *ngFor="let product of products">
-
+  
   <h3>
     <span>
     <a [title]="product.name + ' details'">
       {{ product.name }}
       </a>
      <span class="price">
-       Rs.{{product.price}}
+       Rs.{{getPrice(product.price, product.discount)}}
      </span> 
+     &nbsp;
+     <span class="actualPrice">
+       Rs.{{product.price}}
+     </span>
+     &nbsp;
+     <span class="discountValue">
+          {{product.discount}}% off
+     </span>
     </span>
   </h3>
 

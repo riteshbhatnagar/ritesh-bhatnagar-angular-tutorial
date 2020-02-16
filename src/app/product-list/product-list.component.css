@@ -1,7 +1,19 @@
 .price{
   font-size:15px;
   color: hsl(273, 100%, 50%);
-  font-style: italic
+  font-style: italic;
+}
+
+.actualPrice{
+   font-size:12px;
+  color: hsl(209, 100%, 50%);
+  text-decoration: line-through
+}
+
+.discountValue{
+   font-size:12px;
+  color:green;
+  
 }
 
 /*
