@@ -5,7 +5,7 @@
   
   <h3>
     <span>
-    <a [title]="product.name + ' details'">
+    <a bind-title="product.name + ' details'" on-click="toggleDesc(product)">
       {{ product.name }}
       </a>
      <span class="price">
@@ -22,11 +22,11 @@
     </span>
   </h3>
 
-  <p *ngIf="product.description">
+  <p bind-hidden="product.showDesc" *ngIf="product.description">
     Description: {{ product.description }}
   </p>
 
-  <button (click)="share()">
+  <button on-click="share()">
     Share
   </button>
 
