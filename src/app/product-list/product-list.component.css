@@ -1,12 +1,12 @@
 .price{
   font-size:15px;
-  color: hsl(273, 100%, 50%);
+  color: green;
   font-style: italic;
 }
 
 .actualPrice{
    font-size:12px;
-  color: hsl(209, 100%, 50%);
+  color: red;
   text-decoration: line-through
 }
 
