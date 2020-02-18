@@ -6,6 +6,14 @@
     {{item.id}} - {{item.name}} 
   </li>
 </ul>
+ <a (click)="incrPrice()">Incr Item price</a> &nbsp;
+ <a (click)="decrPrice()">Decr Item price</a>
 <p>
-  <app-item-detail [selectedItem]="selectedItem" [price]="selectedItem && selectedItem.price"></app-item-detail>
+  <span class="itemClicked" *ngIf="selectedItem && selectedItem.date">clicked on {{selectedItem.date | date:"dd-MMM-yyyy HH:m:ss"}}</span>
+
+
+  <app-item-detail *ngIf="selectedItem"
+    [selectedItemDetail]="selectedItem && selectedItem.detail" 
+    [price]="selectedItem && selectedItem.price">
+  </app-item-detail>
 </p>

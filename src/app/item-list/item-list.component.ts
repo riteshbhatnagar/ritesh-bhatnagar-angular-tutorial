@@ -24,8 +24,15 @@ export class ItemListComponent implements OnInit {
   selectItem(item : Item){
     this.selectedItem = item;
     // Add clicked date
-    item.date=new Date();
+    this.selectedItem.date=new Date();
     
+  }
+
+  incrPrice(){
+    this.selectedItem.price=this.selectedItem.price+100;
+  }
+  decrPrice(){
+    this.selectedItem.price=this.selectedItem.price-100;
   }
 
 }

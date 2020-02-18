@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-item-detail',
@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ItemDetailComponent  {
 
-  @Input("selectedItem") item;
-  private _price :number;
+  @Input("selectedItemDetail") itemDetail;
+   private _price :number;
 
   @Input()
   set price(price:number){
@@ -17,4 +17,17 @@ export class ItemDetailComponent  {
   get price():number{
       return this._price;
   }
+  changeLog: string[]  = [];
+  ngOnChanges(priceChange : {[key : string] : SimpleChange}){
+    let diff: string[] = [];
+    for(let val in priceChange){
+      console.log(val, priceChange[val]);
+      if(val==="price" && !priceChange[val].isFirstChange()){
+      let newPrice = JSON.stringify(priceChange[val].currentValue);
+      let oldPrice = JSON.stringify(priceChange[val].previousValue);
+      diff.push(`${val} changed from ${oldPrice} to ${newPrice}` );
+      }
+    }
+    this.changeLog.push(diff.join(', '));
+  };
 }
