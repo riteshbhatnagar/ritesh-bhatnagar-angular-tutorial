@@ -1,4 +1,4 @@
 <p>
 {{item.detail}}
-<span class="itemClicked" *ngIf="item.date">clicked on {{item.date | date:"dd-MMM-yyyy HH:m:ss"}}</span> <span>{{price}}</span>
+<span class="itemClicked" *ngIf="item.date">clicked on {{item.date | date:"dd-MMM-yyyy HH:m:ss"}}</span> <BR><span *ngIf="price">Item price is {{price}}</span>
 </p>

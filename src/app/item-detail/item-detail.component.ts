@@ -10,7 +10,7 @@ export class ItemDetailComponent  {
   @Input("selectedItem") item;
   private _price :number;
 
-  @Input("id")
+  @Input()
   set price(price:number){
     this._price = price*100;
   }
