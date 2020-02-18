@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
+import { ItemListComponent } from './item-list/item-list.component';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -18,7 +21,8 @@ import { ProductListComponent } from './product-list/product-list.component';
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent
+    ProductListComponent,
+    ItemListComponent
   ],
   bootstrap: [ AppComponent ]
 })
