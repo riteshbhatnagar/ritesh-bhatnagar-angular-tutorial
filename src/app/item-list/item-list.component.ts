@@ -22,8 +22,10 @@ export class ItemListComponent implements OnInit {
   }
 
   selectItem(item : Item){
-    console.log(item);
     this.selectedItem = item;
+    // Add clicked date
+    item.date=new Date();
+    
   }
 
 }
