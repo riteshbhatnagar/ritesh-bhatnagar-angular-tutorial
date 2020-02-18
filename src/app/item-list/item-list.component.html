@@ -3,6 +3,9 @@
 <p><i>Pick a item from the list</i></p>
 <ul>
   <li *ngFor="let item of items" (click)="selectItem(item)">
-    {{item.id}} - {{item.name}} <span class="itemClicked" *ngIf="item.date">- clicked on {{item.date | date:"dd-MMM-yyyy H:m:ss"}}</span>
+    {{item.id}} - {{item.name}} 
   </li>
 </ul>
+<p>
+  <app-item-detail [selectedItem]="selectedItem" [id]="seectedItem && selectedItem.id"></app-item-detail>
+</p>

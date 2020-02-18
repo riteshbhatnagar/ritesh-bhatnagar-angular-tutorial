@@ -14,8 +14,9 @@ export class ProductListComponent {
   share() {
     window.alert('The product has been shared!');
   }
-  getPrice(price, discount){
-    return price - (price * (discount/100));
+  getPrice(product){
+    product.discountedPrice=product.price - (product.price * (product.discount/100));
+    return product.discountedPrice;
   }
 
   toggleDesc(product){

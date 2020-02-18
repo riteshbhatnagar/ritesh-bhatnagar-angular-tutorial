@@ -9,7 +9,7 @@
       {{ product.name }}
       </a>
      <span class="price">
-       Rs.{{getPrice(product.price, product.discount)}}
+       Rs.{{getPrice(product)}}
      </span> 
      &nbsp;
      <span class="actualPrice">
@@ -29,5 +29,7 @@
   <button on-click="share()">
     Share
   </button>
+
+  <app-product-alerts [product]="product"></app-product-alerts>
 
 </div>
